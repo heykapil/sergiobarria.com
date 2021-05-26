@@ -9,19 +9,22 @@ import { getAllFilesFrontMatter } from '@/lib/mdx';
 import Container from '@/components/Container';
 import PostListPreview from '@/components/PostListPreview';
 import Card from '@/components/Card';
+import { Posts } from '../types';
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog');
+  const { allFiles } = getAllFilesFrontMatter('blog');
 
   return {
     props: {
-      posts,
+      allFiles,
     },
   };
 }
 
-export default function Home({ posts }) {
-  const latestPosts = posts.allFiles.slice(0, 4);
+export default function Home({ allFiles }: Posts) {
+  console.log(allFiles);
+
+  const latestPosts = allFiles.slice(0, 4);
   const url = 'https://sergiobarria.com';
   const title = 'Home | Sergio Barria';
   const description =
@@ -113,10 +116,7 @@ export default function Home({ posts }) {
           <h1 className="pb-4 text-2xl font-bold leading-9 tracking-tight text-gray-800 border-b dark:text-gray-100 sm:leading-10 md:text-4xl md:leading-14">
             My latest toughts
           </h1>
-          <PostListPreview
-            postsArr={latestPosts}
-            sectTitle="My latest toughts"
-          />
+          <PostListPreview posts={latestPosts} />
           <div className="flex justify-center mt-6">
             <NextLink href="/blog">
               <a className="px-4 py-2 uppercase transition duration-200 ease-in transform border rounded text-skin-accent border-skin-accent hover:text-skin-inverted hover:border-transparent hover:-translate-y-1 active:translate-y-0 hover:shadow-xl hover:bg-skin-fill">

@@ -9,19 +9,11 @@
   </url>
 
   <url>
-    <loc>https://sergiobarria.com</loc>
-  </url>
-
-  <url>
     <loc>https://sergiobarria.com/projects</loc>
   </url>
 
   <url>
     <loc>https://sergiobarria.com/resources</loc>
-  </url>
-
-  <url>
-    <loc>https://sergiobarria.com/about/about</loc>
   </url>
 
   <url>
@@ -78,6 +70,10 @@
     <loc
       >https://sergiobarria.com/blog/what-is-the-tutorial-hell-and-how-to-escape-it</loc
     >
+  </url>
+
+  <url>
+    <loc>https://sergiobarria.com/about/about</loc>
   </url>
 
   <url>
